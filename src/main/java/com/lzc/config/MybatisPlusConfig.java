@@ -1,0 +1,23 @@
+package com.lzc.config;
+
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+/**
+ * @author shkstart
+ * @create 2021-08-23-19:58
+ */
+@Configuration
+@EnableTransactionManagement
+@MapperScan("com.lzc.mapper")
+public class MybatisPlusConfig {
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        return paginationInterceptor;
+    }
+}
+
