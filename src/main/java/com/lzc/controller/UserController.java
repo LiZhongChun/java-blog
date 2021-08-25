@@ -40,7 +40,7 @@ public class UserController {
 
     @GetMapping  ("/test")
     public Result test(){
-        List<User> users = userMapper.fingAll();
+        List<User> users = userMapper.findAll();
 
         return Result.success(users);
     }
